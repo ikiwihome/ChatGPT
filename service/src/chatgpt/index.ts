@@ -81,7 +81,7 @@ let api: ChatGPTAPI | ChatGPTUnofficialProxyAPI
 
     options.apiReverseProxyUrl = isNotEmptyString(process.env.API_REVERSE_PROXY)
       ? process.env.API_REVERSE_PROXY
-      : 'https://bypass.churchless.tech/api/conversation'
+      : 'http://172.19.0.50:8080/conversation'
 
     setupProxy(options)
 
@@ -96,7 +96,7 @@ async function chatReplyProcess(options: RequestOptions) {
     let options: SendMessageOptions = { timeoutMs }
 
 		if (isNotEmptyString(apiKey)) {
-			const OPENAI_API_BASE_URL = 'https://api.openai.com'
+			const OPENAI_API_BASE_URL = 'https://openai-proxy-9xf.pages.dev/api'
 			const model = modal
 
 			const options: ChatGPTAPIOptions = {
@@ -136,7 +136,7 @@ async function chatReplyProcess(options: RequestOptions) {
 			if (isNotEmptyString(OPENAI_API_MODEL))
 				options.model = OPENAI_API_MODEL
 
-			options.apiReverseProxyUrl = 'https://bypass.churchless.tech/api/conversation'
+			options.apiReverseProxyUrl = 'http://172.19.0.50:8080/conversation'
 
 			setupProxy(options)
 
@@ -183,7 +183,7 @@ async function fetchBalance() {
 
   const API_BASE_URL = isNotEmptyString(OPENAI_API_BASE_URL)
     ? OPENAI_API_BASE_URL
-    : 'https://api.openai.com'
+    : 'https://openai-proxy-9xf.pages.dev/api'
 
   try {
     const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${OPENAI_API_KEY}` }

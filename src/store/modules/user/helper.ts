@@ -15,10 +15,9 @@ export interface UserState {
 export function defaultSetting(): UserState {
   return {
     userInfo: {
-      avatar: 'https://oss.8uai.cn/8uai/2023/04/20230407191853266.jpg',
-      name: 'chat.8uai.cn',
-      // description: 'Star on <a href="https://github.com/Chanzhaoyu/chatgpt-bot" class="text-blue-500" target="_blank" >Github</a>',
-			description: 'AI对话 Star on <a href="https://github.com/Chanzhaoyu/chatgpt-web" class="text-blue-500" target="_blank" >Github</a>',
+      avatar: 'https://img.icons8.com/nolan/140/chatgpt.png',
+      name: 'OpenAI ChatGPT',
+      description: 'View on <a href="https://platform.openai.com/docs/models/overview" class="text-blue-500" target="_blank" >OpenAI</a>',
     },
   }
 }
